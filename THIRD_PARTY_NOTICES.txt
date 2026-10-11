@@ -1,0 +1,41 @@
+OpenAI tiktoken — tokenizer vocabulary and pretokenization rules
+
+MIT License
+
+Copyright (c) 2022 OpenAI, Shantanu Jain
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+Glyph Lab provenance / license caution
+====================================
+Glyph design, shapes and vocabulary: gillverd/accelerando-8192
+https://github.com/gillverd/accelerando-8192
+Inspected revision: b1e789d50ce92af0ce142675d38da451d0c8d078
+The repository API reports no license; its README credits the inspiration and tiktoken but does not explicitly grant a license for glyph shapes or repository code. Public availability alone does not grant reuse rights. Appropriate permission is needed before redistribution/publication where applicable. We make no claim that the MIT tiktoken license applies to glyph geometry or eacc.world code.
+
+Deterministic image decoder and browser modules: eacc.world
+https://eacc.world/assets/image-reader-worker.mjs
+https://eacc.world/assets/transmission.mjs
+https://eacc.world/assets/glyph-codec.mjs
+https://eacc.world/assets/tokenizer.mjs
+https://eacc.world/assets/cropped-glyph-reader.mjs
+https://eacc.world/assets/alphabet.json
+These fetched modules carried no explicit license header; no reuse license was located/verified. Original files retained, raster-reader.mjs adapted for async invocation and iPhone/Safari fallback; reader-worker.mjs is the bridge. Original matching logic retained. Attribution is not a substitute for permission.
+
+Glyph system inspired by lettering in the Accelerando music video, by Grimes & Vadakin. No ownership of the song is claimed. No song lyrics are included in the shipped alphabet or example. UPSTREAM-README.md retained for original credits.
