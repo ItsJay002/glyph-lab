@@ -1,4 +1,4 @@
-const CACHE='glyph-lab-v1';
+const CACHE='glyph-lab-v2-clean-png';
 const FILES=['./','./index.html','./style.css','./app.mjs','./manifest.webmanifest','./icon.svg','./icon-192.png','./icon-512.png','./apple-touch-icon.png','./README.md','./THIRD_PARTY_NOTICES.txt','./assets/alphabet.json','./assets/tokenizer.mjs','./assets/glyph-codec.mjs','./assets/transmission.mjs','./assets/cropped-glyph-reader.mjs','./assets/raster-reader.mjs','./assets/reader-worker.mjs'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(FILES))));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('glyph-lab-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));

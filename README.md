@@ -18,12 +18,12 @@ Open the HTTPS URL in Safari, wait for “Offline assets cached”, then Share �
 
 ## Features and exactness
 
-- Encode UTF-8 text using the actual custom 8,192-rank BPE tokenizer; SVG preview and exports, PNG transmission export with CRC, token IDs, and supplementary private-use Unicode U+F0000–U+F1FFF.
+- Encode UTF-8 text using the actual custom 8,192-rank BPE tokenizer; SVG preview and exports, tightly cropped glyph-only PNG exports (no labels, footer, or checksum strip), token IDs, and supplementary private-use Unicode U+F0000–U+F1FFF.
 - IDs and Unicode recover exact UTF-8 bytes including BOM, whitespace and partial-token byte sequences. HTML textareas normalize CRLF/CR line endings to LF before encoding and when showing decoded output; the underlying codec preserves raw CRLF bytes. Invalid UTF-8 or out-of-range/nonseparator input produces explicit errors.
 - SVG decoding matches path geometry, never trusts hidden text or token metadata, never renders uploaded SVG. It accepts only the exact Glyph Lab / eacc.world exported M/L layout (16 columns, 62-pixel cells). Arbitrary SVG transformations/font-based SVGs are deliberately rejected.
 - PNG/JPG recognition is deterministic: official transmission layout uses shape templates plus CRC. Plain-background crops use conservative geometric matching with agreement at multiple thresholds. No language guessing. Screenshots must be straight, separated, sharp glyphs; rotations, merged glyphs, perspective, complex backgrounds, lossy JPEGs or incomplete crops may reject. A CRC is error detection, not authentication. Cropped reads lack a checksum and cannot establish that the source was not modified.
 - Image decoder uses module workers/OffscreenCanvas where available, with ordinary HTML canvas and HTML Image fallback for Safari without those APIs. The fallback can temporarily block the UI on large crops.
-- Encode/decode at most 2,000 tokens; text input at most 12,000 UTF-16 code units; PNG transmission at most 600 tokens; cropped-image reader at most 256 glyphs. Upload at most 12 MB, dimensions at most 6,000×12,000 and 16 million pixels; raster aspect ratio at most 8. Huge/complex text can be slower because BPE is performed locally.
+- Encode/decode at most 2,000 tokens; text input at most 12,000 UTF-16 code units; PNG export at most 600 tokens; cropped-image reader at most 256 glyphs. Upload at most 12 MB, dimensions at most 6,000×12,000 and 16 million pixels; raster aspect ratio at most 8. Huge/complex text can be slower because BPE is performed locally.
 - No glyph font is required: preview uses geometry. Copied Unicode may display as empty boxes in other applications without the Accelerando font. This is an alphabet/encoding, not encryption.
 
 ## Provenance
